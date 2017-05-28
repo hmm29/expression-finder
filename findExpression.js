@@ -13,10 +13,10 @@ function findExpression(nums, ops, value) {
   }
 
   // generate all permutations of nums
-  let perms = generatePermutations(nums.map((num) => num + ""));
+  let perms = generatePermutations(nums.filter((num) => Number.isFinite(num)).map((num) => num + ""));
 
   // turn the permutations into formatted arrays filled only with operands
-  let expsWithOperands = perms.map((perm) => makeExpWithOperands(perm)),
+  let expsWithOperands = perms.filter((perm) => typeof perm === "string").map((perm) => makeExpWithOperands(perm)),
       stringExp = '';
 
   // parentheses pairs go at index pairs (0,5), (3,9), and (7,12)
@@ -84,10 +84,6 @@ function generatePermutations(arr) {
  * @returns {Array} exp - an array containing the numbers at indices 1, 4, 8, and 11
  */
 function makeExpWithOperands(perm) {
-  if(typeof perm !== 'string') {
-    return null;
-  }
-
   let exp = [];
   let operandIdxs = [1,4,8,11];
 
