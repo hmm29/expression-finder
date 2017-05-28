@@ -13,7 +13,7 @@ function findExpression(nums, ops, value) {
   }
 
   // generate all permutations of nums
-  let perms = generatePermutations(nums.filter((num) => Number.isFinite(num)).map((num) => num + ""));
+  let perms = generatePermutations(nums.filter((num) => Number.isFinite(num) && num >= 0).map((num) => num + ""));
 
   // turn the permutations into formatted arrays filled only with operands
   let expsWithOperands = perms.filter((perm) => typeof perm === "string").map((perm) => makeExpWithOperands(perm)),
