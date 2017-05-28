@@ -5,9 +5,6 @@
  * @param {Array} ops - array of operators
  * @param {Number} value - the value of the expression result
  * @returns {String} stringExp - the expression that evaluates to value
- *
- * Time: O(n^2 * n!)
- * Space: O(n^2 * n!)
  */
 
 function findExpression(nums, ops, value) {
