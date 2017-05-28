@@ -3,8 +3,8 @@
  * and up to four arithmetic operators.
  * @param {Array} nums - array of operands
  * @param {Array} ops - array of operators
- * @param {Number} value - the value of the expression result
- * @returns {String} stringExp - the expression that evaluates to value
+ * @param {number} value - the value of the expression result
+ * @returns {?string} stringExp - the expression that evaluates to value
  */
 
 function findExpression(nums, ops, value) {
