@@ -15,11 +15,11 @@ function findExpression(nums, ops, value) {
   // generate all permutations of nums for nonnegative values
   let perms = generatePermutations(nums.filter((num) => Number.isFinite(num) && num >= 0).map((num) => num + ""));
 
-  // turn the permutations into formatted expression arrays filled only with operands
+  // turn the permutations into formatted expression arrays, filled with operands at indices 1, 4, 8, and 11
   let expsWithOperands = perms.filter((perm) => typeof perm === "string").map((perm) => makeExpWithOperands(perm)),
       stringExp = '';
 
-  // parentheses pairs go at index pairs (0,5), (3,9), and (7,12)
+  // '(' and ')' go at index pairs (0,5), (3,9), and (7,12)
   const parPairs = [[0,5],[3,9],[7,12]];
 
   for(let exp of expsWithOperands) {
@@ -31,7 +31,7 @@ function findExpression(nums, ops, value) {
           exp[6] = ops[j];
           exp[10] = ops[k];
 
-          // insert opening and closing parentheses at each index pair to determine order of operations
+          // insert '(' and ')' at each index pair to determine order of operations
           for(let i = 0; i < parPairs.length; i++) {
             exp[parPairs[i][0]] = '(';
             exp[parPairs[i][1]] = ')';
@@ -44,7 +44,7 @@ function findExpression(nums, ops, value) {
               return stringExp;
             }
 
-            // clear the current parentheses pair
+            // clear current '(' and ')' from the expression
             exp[parPairs[i][0]] = '';
             exp[parPairs[i][1]] = '';
           }
@@ -80,8 +80,8 @@ function generatePermutations(arr) {
 
 /**
  * Makes a formatted expression array from a string of four numbers.
- * @param {string} perm - a permutation of four numbers
- * @returns {Array} exp - an array containing the numbers at indices 1, 4, 8, and 11
+ * @param {string} perm - a four-character string of numbers, representing a permutation
+ * @returns {Array} exp - an array containing numerical characters at indices 1, 4, 8, and 11
  */
 function makeExpWithOperands(perm) {
   let exp = [],
