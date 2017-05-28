@@ -22,6 +22,7 @@ function findExpression(nums, ops, value) {
   // '(' and ')' go at index pairs (0,5), (3,9), and (7,12)
   const parPairs = [[0,5],[3,9],[7,12]];
 
+  // test all combinations of three operators
   for(let exp of expsWithOperands) {
     for(let i = 0; i < ops.length; i++) {
       for(let j = i; j < ops.length; j++) {
