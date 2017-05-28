@@ -81,7 +81,7 @@ function generatePermutations(arr) {
 /**
  * Makes a formatted expression array from a string of four numbers.
  * @param {string} perm - a four-character string of numbers, representing a permutation
- * @returns {Array} exp - an array containing numerical characters at indices 1, 4, 8, and 11
+ * @returns {Array} exp - an array containing numeric characters at indices 1, 4, 8, and 11
  */
 function makeExpWithOperands(perm) {
   let exp = [],
