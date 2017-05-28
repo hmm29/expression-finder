@@ -1,16 +1,17 @@
 /**
- * Find an expression using the given operands and operators that evaluates to result.
+ * Finds an expression that evaluates to a value, using exactly four operands
+ * and up to four arithmetic operators.
  * @param {Array} nums - array of operands
  * @param {Array} ops - array of operators
- * @param {Number} result - the value of the expression result
- * @returns {String} stringExp - the expression that evaluates to result
+ * @param {Number} value - the value of the expression result
+ * @returns {String} stringExp - the expression that evaluates to value
  *
  * Time: O(n^2 * n!)
  * Space: O(n^2 * n!)
  */
 
-function findExpression(nums, ops, result) {
-  if(!Array.isArray(nums) || nums.length !== 4 || !Array.isArray(ops) || ops.length > 4 || typeof result !== "number") {
+function findExpression(nums, ops, value) {
+  if(!Array.isArray(nums) || nums.length !== 4 || !Array.isArray(ops) || ops.length > 4 || typeof value !== "number") {
     throw new Error('invalid inputs');
   }
 
@@ -39,7 +40,7 @@ function findExpression(nums, ops, result) {
             exp[parPairs[i][1]] = ')';
 
             stringExp = exp.join('');
-            if(eval(stringExp) === result) {
+            if(eval(stringExp) === value) {
               return stringExp;
             }
 
