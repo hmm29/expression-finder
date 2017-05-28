@@ -84,8 +84,8 @@ function generatePermutations(arr) {
  * @returns {Array} exp - an array containing the numbers at indices 1, 4, 8, and 11
  */
 function makeExpWithOperands(perm) {
-  let exp = [];
-  let operandIdxs = [1,4,8,11];
+  let exp = [],
+      operandIdxs = [1,4,8,11];
 
   for(let i = 0; i < perm.length; i++) {
      exp[operandIdxs.shift()] = perm[i];
