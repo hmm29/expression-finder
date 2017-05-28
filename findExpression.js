@@ -12,7 +12,7 @@ function findExpression(nums, ops, value) {
     throw new Error('invalid inputs');
   }
 
-  // generate all permutations of nums
+  // generate all permutations of nums for nonnegative values
   let perms = generatePermutations(nums.filter((num) => Number.isFinite(num) && num >= 0).map((num) => num + ""));
 
   // turn the permutations into formatted arrays filled only with operands
