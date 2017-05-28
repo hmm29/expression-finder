@@ -1,6 +1,6 @@
 # expression-finder
 
-This program finds an expression that evaluates to a value, using exactly four operands and up to four arithmetic operators. It was a quick code project inspired by the Introduction of Hacking: The Art of Exploitation (Second Edition) by Jon Erickson.
+This program finds an expression that evaluates to a value, using exactly four operands and up to four arithmetic operators. It was a quick code project inspired by the Introduction of *Hacking: The Art of Exploitation* (Second Edition) by Jon Erickson.
 
 The given problem was the following:
 
